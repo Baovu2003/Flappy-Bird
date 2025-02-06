@@ -1,27 +1,41 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
-#board{
-    background-image: url("./assets/images/flappybirdbg.png");
+#board {
+  background-image: url("./assets/images/flappybirdbg.png");
 }
+
 .hidden {
-    display: none;
-  }
-  #game-over {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 48px;
-    color: white;
-    display: none; /* Hide the message initially */
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 20px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
+  display: none;
+}
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  display: none;
+  /* Hide the message initially */
+}
+#start-screen{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+}
+button {
+  padding: 10px 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-color: violet;
+}
+button:hover{
+  background-color: green;
+}

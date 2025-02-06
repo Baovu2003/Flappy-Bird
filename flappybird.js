@@ -33,6 +33,7 @@ let gravity = 0.3; // Trọng lực nhẹ giúp chim rơi từ từ
 let jumpForce = -2; // Lực nhảy mạnh giúp chim bay lên nhanh
 let maxFallSpeed = 5; // Giới hạn tốc độ rơi để chim không rơi quá nhanh
 
+let gameStarted = false; 
 let gameOver = false;
 let score = 0;
 let highScore = 0; // Variable to store the highest score
@@ -65,14 +66,21 @@ window.onload = function () {
 
     bottomPipeImg = new Image();
     bottomPipeImg.src = "./assets/images/bottompipe.png";
-
-    requestAnimationFrame(update); // Bắt đầu vẽ game
-    setInterval(placePipes, 1500); // Mỗi 1.5 giây, tạo một cặp ống nước
-    setInterval(animateBird, 100); // Mỗi 1.5 giây, tạo một cặp ống nước
-    document.addEventListener("keydown", moveBird);
-    document.addEventListener("click", moveBird);
-    bmg.play();
+    document.getElementById("start-screen").addEventListener("click", startGame); // Start game on click
+ 
 };
+function startGame() {
+    if (!gameStarted) {
+        gameStarted = true; // Set flag to true
+        document.getElementById("start-screen").style.display = "none"; // Hide start screen
+        bmg.play(); // Play background music
+        requestAnimationFrame(update); // Start the game loop
+        setInterval(placePipes, 1500);
+        setInterval(animateBird, 100);
+        document.addEventListener("keydown", moveBird);
+        document.addEventListener("click", moveBird);
+    }
+}
 
 function update() {
     requestAnimationFrame(update); // Gọi lại chính nó để game chạy liên tục
