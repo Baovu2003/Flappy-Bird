@@ -4,7 +4,7 @@ body {
 }
 
 #board{
-    background-image: url("./public/images/flappybirdbg.png");
+    background-image: url("./assets/images/flappybirdbg.png");
 }
 .hidden {
     display: none;
