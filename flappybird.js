@@ -102,6 +102,15 @@ function update() {
         context.font = "45px sans-serif";
         context.fillText("High Score: " + highScore, 5, 90); // Display high score below current score
 
+        if (score < 5) {
+            context.fillStyle = "red";
+            context.font = "30px sans-serif";
+            context.fillText("Gà vcl",5,150);
+        } else if (score >= 5 && score < 10) {
+            context.fillStyle = "orange";
+            context.font = "30px sans-serif";
+            context.fillText("Cũng được đấy!",5,150);
+        }
         return;
     }
 
